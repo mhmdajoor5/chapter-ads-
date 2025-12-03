@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صالون لافندر - حجز موعد</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>صالون لافندر 💜</h1>
+                <p class="tagline">جمالك هو عنواننا</p>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="booking.html" class="active">حجز موعد</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <h1 class="page-title">احجزي موعدك</h1>
+                <p class="page-subtitle">املئي النموذج وسنتواصل معك لتأكيد الموعد</p>
+
+                <!-- Complete Booking Form with all form elements -->
+                <form class="booking-form" id="bookingForm">
+                    
+                    <!-- Personal Information -->
+                    <fieldset class="form-section">
+                        <legend>المعلومات الشخصية</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">الاسم الكامل <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="fullName" 
+                                    name="fullName" 
+                                    placeholder="أدخلي اسمك الكامل"
+                                    required
+                                    minlength="3"
+                                    maxlength="50"
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">رقم الجوال <span class="required">*</span></label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    placeholder="05xxxxxxxx"
+                                    required
+                                    pattern="^05[0-9]{8}$"
+                                >
+                                <small>مثال: 0501234567</small>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="example@email.com"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="age">العمر</label>
+                                <input 
+                                    type="number" 
+                                    id="age" 
+                                    name="age" 
+                                    min="16" 
+                                    max="100"
+                                    placeholder="18"
+                                >
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Appointment Details -->
+                    <fieldset class="form-section">
+                        <legend>تفاصيل الموعد</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointmentDate">تاريخ الموعد <span class="required">*</span></label>
+                                <input 
+                                    type="date" 
+                                    id="appointmentDate" 
+                                    name="appointmentDate" 
+                                    required
+                                    min="2025-01-01"
+                                >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="appointmentTime">وقت الموعد <span class="required">*</span></label>
+                                <input 
+                                    type="time" 
+                                    id="appointmentTime" 
+                                    name="appointmentTime" 
+                                    required
+                                    min="09:00"
+                                    max="22:00"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">نوع الخدمة <span class="required">*</span></label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">-- اختاري الخدمة --</option>
+                                <optgroup label="خدمات الشعر">
+                                    <option value="haircut">قص شعر</option>
+                                    <option value="hairstyle">تصفيف شعر</option>
+                                    <option value="coloring">صبغة شعر</option>
+                                    <option value="highlights">هايلايت</option>
+                                    <option value="treatment">علاج الشعر</option>
+                                </optgroup>
+                                <optgroup label="خدمات التجميل">
+                                    <option value="makeup">مكياج</option>
+                                    <option value="facial">عناية بالبشرة</option>
+                                    <option value="manicure">مناكير</option>
+                                    <option value="pedicure">بدكير</option>
+                                </optgroup>
+                                <optgroup label="باقات خاصة">
+                                    <option value="basic-package">الباقة الأساسية</option>
+                                    <option value="premium-package">الباقة المميزة</option>
+                                    <option value="royal-package">الباقة الملكية</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stylist">المصففة المفضلة</label>
+                            <select id="stylist" name="stylist">
+                                <option value="">-- اختيار تلقائي --</option>
+                                <option value="sarah">سارة - خبيرة قص وتصفيف</option>
+                                <option value="maha">مها - خبيرة صبغات</option>
+                                <option value="noura">نورة - خبيرة مكياج</option>
+                                <option value="lina">لينا - خبيرة عناية بالبشرة</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>خدمات إضافية</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="wash">
+                                    غسيل شعر (+30 ريال)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="blowdry">
+                                    سشوار (+50 ريال)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="massage">
+                                    مساج فروة الرأس (+40 ريال)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="treatment">
+                                    ماسك علاجي (+60 ريال)
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferences -->
+                    <fieldset class="form-section">
+                        <legend>التفضيلات</legend>
+                        
+                        <div class="form-group">
+                            <label>هل سبق لك زيارة الصالون؟</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="previousVisit" value="yes">
+                                    نعم، عميلة دائمة
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="previousVisit" value="first" checked>
+                                    لا، هذه أول زيارة
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hairType">نوع الشعر</label>
+                            <select id="hairType" name="hairType">
+                                <option value="straight">ناعم</option>
+                                <option value="wavy">مموج</option>
+                                <option value="curly">مجعد</option>
+                                <option value="coily">شديد التجعد</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="allergies">الحساسية (إن وجدت)</label>
+                            <textarea 
+                                id="allergies" 
+                                name="allergies" 
+                                rows="3"
+                                placeholder="مثال: حساسية من صبغات معينة، منتجات كيميائية..."
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequests">طلبات خاصة أو ملاحظات</label>
+                            <textarea 
+                                id="specialRequests" 
+                                name="specialRequests" 
+                                rows="4"
+                                placeholder="أخبرينا عن أي تفاصيل إضافية..."
+                                maxlength="500"
+                            ></textarea>
+                            <small class="char-counter">0 / 500 حرف</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">الميزانية التقريبية (ريال)</label>
+                            <input 
+                                type="range" 
+                                id="budget" 
+                                name="budget" 
+                                min="100" 
+                                max="1000" 
+                                step="50"
+                                value="300"
+                            >
+                            <output for="budget" id="budgetOutput">300 ريال</output>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referralSource">كيف سمعتي عنا؟</label>
+                            <datalist id="referralOptions">
+                                <option value="Instagram">
+                                <option value="Snapchat">
+                                <option value="صديقة">
+                                <option value="Google">
+                                <option value="TikTok">
+                            </datalist>
+                            <input 
+                                type="text" 
+                                id="referralSource" 
+                                name="referralSource" 
+                                list="referralOptions"
+                                placeholder="اختاري أو اكتبي..."
+                            >
+                        </div>
+                    </fieldset>
+
+                    <!-- Payment Method -->
+                    <fieldset class="form-section">
+                        <legend>طريقة الدفع المفضلة</legend>
+                        
+                        <div class="radio-group payment-options">
+                            <label class="radio-label-card">
+                                <input type="radio" name="paymentMethod" value="cash" checked>
+                                <div class="payment-card">
+                                    <span class="icon">💵</span>
+                                    <span>نقداً عند الوصول</span>
+                                </div>
+                            </label>
+                            <label class="radio-label-card">
+                                <input type="radio" name="paymentMethod" value="card">
+                                <div class="payment-card">
+                                    <span class="icon">💳</span>
+                                    <span>بطاقة ائتمانية</span>
+                                </div>
+                            </label>
+                            <label class="radio-label-card">
+                                <input type="radio" name="paymentMethod" value="online">
+                                <div class="payment-card">
+                                    <span class="icon">📱</span>
+                                    <span>دفع إلكتروني</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <label class="checkbox-label terms">
+                            <input type="checkbox" name="agreeTerms" required>
+                            <span>أوافق على <a href="#" target="_blank">شروط وأحكام</a> الحجز وسياسة الإلغاء</span>
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="receiveUpdates">
+                            <span>أرغب في تلقي العروض والتحديثات عبر الواتساب والبريد الإلكتروني</span>
+                        </label>
+                    </div>
+
+                    <!-- Hidden field (for tracking) -->
+                    <input type="hidden" name="source" value="website">
+                    <input type="hidden" name="bookingId" id="bookingId">
+
+                    <!-- Submit Buttons -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-large">
+                            <span>تأكيد الحجز</span>
+                        </button>
+                        <button type="reset" class="btn-secondary btn-large">
+                            <span>إعادة تعيين</span>
+                        </button>
+                    </div>
+
+                    <!-- Form validation message -->
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+
+                <!-- Booking Summary Sidebar -->
+                <aside class="booking-summary" id="bookingSummary">
+                    <h3>ملخص الحجز</h3>
+                    <div class="summary-content">
+                        <p class="summary-empty">املئي النموذج لرؤية الملخص</p>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Available Time Slots -->
+        <section class="time-slots-section">
+            <div class="container">
+                <h2>الأوقات المتاحة اليوم</h2>
+                <div class="time-slots" id="timeSlots">
+                    <button class="time-slot">09:00 ص</button>
+                    <button class="time-slot">10:00 ص</button>
+                    <button class="time-slot booked">11:00 ص</button>
+                    <button class="time-slot">12:00 م</button>
+                    <button class="time-slot">01:00 م</button>
+                    <button class="time-slot booked">02:00 م</button>
+                    <button class="time-slot">03:00 م</button>
+                    <button class="time-slot">04:00 م</button>
+                    <button class="time-slot">05:00 م</button>
+                    <button class="time-slot">06:00 م</button>
+                    <button class="time-slot booked">07:00 م</button>
+                    <button class="time-slot">08:00 م</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>صالون لافندر</h3>
+                    <p>الأحساء، المملكة العربية السعودية</p>
+                    <p>هاتف: +966 50 123 4567</p>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="services.html">الخدمات</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 صالون لافندر. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
